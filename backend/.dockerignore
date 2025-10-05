@@ -1,0 +1,29 @@
+# Ignore Maven/Gradle build output
+target/
+build/
+out/
+
+# Ignore IDE files
+*.iml
+*.ipr
+*.iws
+.idea/
+.vscode/
+*.swp
+
+# Ignore OS files
+.DS_Store
+Thumbs.db
+
+# Ignore logs
+*.log
+
+# Ignore environment files
+.env
+
+# Ignore node modules (if present)
+node_modules/
+
+# Ignore Docker files
+Dockerfile
+docker-compose.yml
