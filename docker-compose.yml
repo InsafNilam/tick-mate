@@ -10,8 +10,8 @@ services:
     restart: always
     volumes:
       - tick-mate-data:/var/lib/postgresql/data
-    expose:
-      - "5432"
+    ports:
+      - "5432:5432"
     networks:
       - tick-mate-network
     healthcheck:
