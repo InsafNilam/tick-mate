@@ -9,7 +9,7 @@ services:
       POSTGRES_PASSWORD: ${POSTGRES_PASSWORD}
     restart: always
     volumes:
-      - data:/var/lib/postgresql/data
+      - tick-mate-data:/var/lib/postgresql/data
     expose:
       - "5432"
     networks:
@@ -75,7 +75,7 @@ services:
           memory: 128M
 
 volumes:
-  data:
+  tick-mate-data:
     driver: local
 
 networks:
