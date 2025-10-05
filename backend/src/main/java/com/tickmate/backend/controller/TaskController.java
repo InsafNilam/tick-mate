@@ -7,7 +7,6 @@ import com.tickmate.backend.domain.entity.TaskEntity;
 import com.tickmate.backend.mapper.TaskMapper;
 import com.tickmate.backend.service.TaskService;
 import io.swagger.v3.oas.annotations.Operation;
-import jakarta.validation.Valid;
 import jakarta.validation.groups.Default;
 import lombok.RequiredArgsConstructor;
 import org.springframework.data.domain.Page;

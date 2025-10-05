@@ -31,13 +31,4 @@ public class TaskRequestDTO {
 
     @PastOrPresent(groups = CreateTaskValidatorGroup.class, message = "Completed date must be in the past or present")
     private LocalDateTime completedAt;
-
-    @AssertTrue(message = "Completed date can only be set when status is COMPLETED or ARCHIVED")
-    private boolean isCompletedAtValid() {
-        if (completedAt == null) {
-            return true;
-        }
-        return status == TaskEntity.Status.COMPLETED ||
-                status == TaskEntity.Status.ARCHIVED;
-    }
 }
