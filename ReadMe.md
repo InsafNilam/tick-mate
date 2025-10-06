@@ -8,11 +8,17 @@ It allows users to **create, update, view, and delete tasks** with priorities, d
 ## 🚀 Features
 
 ✅ Create new tasks with title, description, due date, and priority.
+
 ✅ Update or delete existing tasks.
+
 ✅ Mark tasks as **Completed** — completed tasks are automatically hidden from the UI.
+
 ✅ View only the **6 most recent active (non-completed)** tasks in the UI.
+
 ✅ Paginated and sorted task list via REST API.
+
 ✅ Backend follows **Spring Boot best practices** with **unit & integration tests**.
+
 ✅ Fully containerized using **Docker Compose**.
 
 ---
@@ -22,7 +28,7 @@ It allows users to **create, update, view, and delete tasks** with priorities, d
 | Layer              | Technology |
 |--------------------| -------------------------------------------------
 | **Frontend**       | React + Vite + TypeScript + TailwindCSS / ShadCN |
-| **Backend**        | Spring Boot (Java 17+)  |
+| **Backend**        | Spring Boot (Java 21+)  |
 | **Database**       | PostgreSQL 18 (Alpine)  |
 | **Build & Deploy** | Docker + Docker Compose |
 | **API**            | RESTful Endpoints       |
