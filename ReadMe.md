@@ -1,4 +1,3 @@
-````
 # 🕒 TickMate – Task Management App
 
 **TickMate** is a lightweight task management web application built with **Spring Boot (backend)** and **React (frontend)**.
@@ -138,7 +137,3 @@ This project is licensed under the **MIT License**.
 
 TickMate is a clean, containerized, and testable demo task management app built using modern best practices.
 It’s designed as a reference for building **Spring Boot + React** projects with **Docker, PostgreSQL**, and **CI-ready test coverage**.
-
-```
-
-```
