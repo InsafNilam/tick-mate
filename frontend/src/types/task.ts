@@ -1,9 +1,20 @@
+export type TaskStatus = 'PENDING' | 'IN_PROGRESS' | 'COMPLETED';
+export type TaskPriority = 'LOW' | 'MEDIUM' | 'HIGH';
+
+export interface TaskFormData {
+  title: string;
+  description: string;
+  status: TaskStatus;
+  priority: TaskPriority;
+  dueDate: string;
+}
+
 export interface Task {
   id: string;
   title: string;
   description: string;
-  status: "COMPLETED" | "IN_PROGRESS" | "PENDING";
-  priority: "LOW" | "MEDIUM" | "HIGH";
+  status: TaskStatus;
+  priority: TaskPriority;
   dueDate: string;
   completedAt?: string;
   createdAt: string;
