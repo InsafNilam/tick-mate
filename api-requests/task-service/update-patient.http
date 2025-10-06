@@ -1,0 +1,13 @@
+### PUT request to update task
+PUT http://localhost:8080/api/tasks
+    /d2bb819b-b5cf-43b7-8aaa-d7461c2ea76d
+Content-Type: application/json
+
+{
+  "title": "Design Landing Page",
+  "description": "Create a clean, modern landing page layout with responsive breakpoints.",
+  "status": "COMPLETED",
+  "priority": "HIGH",
+  "due_date": "2025-10-15T18:00:00Z"
+}
+###

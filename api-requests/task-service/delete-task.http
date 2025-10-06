@@ -1,0 +1,5 @@
+### DELETE request to delete task
+DELETE http://localhost:8080/api/tasks
+    /d2bb819b-b5cf-43b7-8aaa-d7461c2ea76d
+
+###

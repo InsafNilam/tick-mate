@@ -1,0 +1,5 @@
+### GET request to get all tasks
+GET http://localhost:8080/api/tasks
+    ?page=1&size=10&sort=dueDate,asc
+
+###

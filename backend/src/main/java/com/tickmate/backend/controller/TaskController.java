@@ -11,6 +11,10 @@ import jakarta.validation.groups.Default;
 import lombok.RequiredArgsConstructor;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.PageRequest;
+import org.springframework.data.domain.Pageable;
+import org.springframework.data.domain.Sort;
+import org.springframework.data.web.PageableDefault;
+import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.annotation.*;
@@ -27,8 +31,13 @@ public class TaskController {
 
     @GetMapping
     @Operation(summary = "Get Tasks")
-    public ResponseEntity<Page<TaskResponseDTO>> getTasks(@RequestParam(required = false) List<TaskEntity.Status> status, @RequestParam(defaultValue = "1") int page, @RequestParam(defaultValue = "20") int size) {
-        Page<TaskEntity> tasks = taskService.getTasks(status, PageRequest.of(page-1, size));
+    public ResponseEntity<Page<TaskResponseDTO>> getTasks(@RequestParam(required = false) List<TaskEntity.Status> status,
+                                                          @PageableDefault(size = 20,
+                                                                  page = 0,
+                                                                  sort = "dueDate",
+                                                                  direction = Sort.Direction.DESC) Pageable pageable) {
+
+        Page<TaskEntity> tasks = taskService.getTasks(status, pageable);
         return ResponseEntity.ok().body(tasks.map(taskMapper::toDTO));
     }
 
@@ -38,7 +47,7 @@ public class TaskController {
         TaskEntity task = taskMapper.toEntity(dto);
 
         TaskResponseDTO taskDTO = taskMapper.toDTO(taskService.createTask(task));
-        return ResponseEntity.ok(taskDTO);
+        return ResponseEntity.status(HttpStatus.CREATED).body(taskDTO);
     }
 
     @GetMapping(path = "/{id}")
@@ -65,5 +74,4 @@ public class TaskController {
         taskService.deleteTask(id);
         return ResponseEntity.noContent().build();
     }
-
 }

@@ -8,6 +8,7 @@ import lombok.Data;
 import lombok.NoArgsConstructor;
 import org.springframework.data.annotation.CreatedDate;
 import org.springframework.data.annotation.LastModifiedDate;
+import org.springframework.data.jpa.domain.support.AuditingEntityListener;
 
 import java.time.LocalDateTime;
 import java.util.UUID;
@@ -17,6 +18,7 @@ import java.util.UUID;
 @NoArgsConstructor
 @Builder
 @Entity
+@EntityListeners(AuditingEntityListener.class)
 @Table(name="tasks")
 public class TaskEntity {
     @Id
@@ -38,24 +40,31 @@ public class TaskEntity {
     @Column(nullable = false)
     private Priority priority;
 
-    @Column(name = "due_date")
+    @Column(name = "due_date", columnDefinition = "TIMESTAMP(3)")
     private LocalDateTime dueDate;
 
-    @Column(name = "completed_at")
+    @Column(name = "completed_at", columnDefinition = "TIMESTAMP(3)")
     private LocalDateTime completedAt;
 
     @CreatedDate
-    @Column(name = "created_at", nullable = false, updatable = false)
+    @Column(name = "created_at", columnDefinition = "TIMESTAMP(3)", nullable = false, updatable = false)
     private LocalDateTime createdAt;
 
     @LastModifiedDate
-    @Column(name = "updated_at", nullable = false)
+    @Column(name = "updated_at", columnDefinition = "TIMESTAMP(3)", nullable = false)
     private LocalDateTime updatedAt;
 
     @PrePersist
     protected void onCreate() {
+        createdAt = LocalDateTime.now();
+        updatedAt = LocalDateTime.now();
         if (status == null) status = Status.PENDING;
         if (priority == null) priority = Priority.MEDIUM;
+    }
+
+    @PreUpdate
+    public void preUpdate() {
+        updatedAt = LocalDateTime.now();
     }
 
     public enum Status {

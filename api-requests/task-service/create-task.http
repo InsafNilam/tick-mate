@@ -1,0 +1,12 @@
+### POST request to create task
+POST http://localhost:8080/api/tasks
+Content-Type: application/json
+
+{
+    "title": "Design Landing Page",
+    "description": "Create a clean, modern landing page layout with responsive breakpoints.",
+    "status": "IN_PROGRESS",
+    "priority": "HIGH",
+    "due_date": "2025-10-15T18:00:00Z"
+}
+###
