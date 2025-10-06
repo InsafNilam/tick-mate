@@ -1,5 +1,4 @@
 services:
-  # PostgreSQL Database for Post Service and Event Service
   db:
     image: postgres:18.0-alpine
     container_name: db

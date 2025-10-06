@@ -1,13 +1,33 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>frontend</title>
-  </head>
-  <body>
-    <div id="root"></div>
-    <script type="module" src="/src/main.tsx"></script>
-  </body>
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  
+  <!-- SEO & App Info -->
+  <title>TickMate – Task Manager</title>
+  <meta name="description" content="TickMate: A simple and efficient task manager to organize your daily tasks." />
+  <meta name="author" content="TickMate Team" />
+  <meta name="theme-color" content="#4F46E5" />
+
+  <!-- Favicon & Touch Icons -->
+  <link rel="icon" href="/logo/favicon.ico" type="image/x-icon" />
+  <link rel="apple-touch-icon" href="/logo/apple-touch-icon.png" />
+
+  <!-- Fonts (Optional, for clean UI) -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet" />
+
+  <!-- Optional: manifest for PWA -->
+  <link rel="manifest" href="/manifest.json" />
+</head>
+<body class="bg-gray-50 font-sans text-gray-800">
+  <div id="root"></div>
+  <noscript>
+    <p style="text-align:center; margin-top:50px;">JavaScript is required to run TickMate.</p>
+  </noscript>
+  <script type="module" src="/src/main.tsx"></script>
+</body>
 </html>
