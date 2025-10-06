@@ -10,7 +10,7 @@ import java.util.UUID;
 
 public interface TaskService {
     TaskEntity createTask(TaskEntity taskRequest);
-    Page<TaskEntity> getTasks(List<TaskEntity.Status> status, Pageable pageable);
+    Page<TaskEntity> getTasks(String query, List<TaskEntity.Status> status, List<TaskEntity.Priority> priority, Pageable pageable);
     Optional<TaskEntity> getTaskById(UUID taskId);
     TaskEntity updateTask(UUID taskId, TaskEntity taskRequest);
     void deleteTask(UUID taskId);

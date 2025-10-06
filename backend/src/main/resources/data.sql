@@ -11,8 +11,8 @@ CREATE TABLE IF NOT EXISTS tasks (
     updated_at      TIMESTAMP(3) DEFAULT CURRENT_TIMESTAMP
 );
 
-CREATE INDEX idx_tasks_status ON tasks(status);
-CREATE INDEX idx_tasks_due_date ON tasks(due_date);
+CREATE INDEX IF NOT EXISTS idx_tasks_status ON tasks(status);
+CREATE INDEX IF NOT EXISTS idx_tasks_due_date ON tasks(due_date);
 
 -- Insert well-known UUIDs for specific tasks
 INSERT INTO tasks (id, title, description, status, priority, due_date, completed_at, created_at, updated_at)

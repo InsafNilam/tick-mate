@@ -31,13 +31,15 @@ public class TaskController {
 
     @GetMapping
     @Operation(summary = "Get Tasks")
-    public ResponseEntity<Page<TaskResponseDTO>> getTasks(@RequestParam(required = false) List<TaskEntity.Status> status,
+    public ResponseEntity<Page<TaskResponseDTO>> getTasks(@RequestParam(required = false) String q,
+                                                          @RequestParam(required = false) List<TaskEntity.Status> status,
+                                                          @RequestParam(required = false) List<TaskEntity.Priority> priority,
                                                           @PageableDefault(size = 20,
                                                                   page = 0,
                                                                   sort = "dueDate",
                                                                   direction = Sort.Direction.DESC) Pageable pageable) {
 
-        Page<TaskEntity> tasks = taskService.getTasks(status, pageable);
+        Page<TaskEntity> tasks = taskService.getTasks(q, status, priority, pageable);
         return ResponseEntity.ok().body(tasks.map(taskMapper::toDTO));
     }
 
