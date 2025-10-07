@@ -7,19 +7,13 @@ It allows users to **create, update, view, and delete tasks** with priorities, d
 
 ## 🚀 Features
 
-✅ Create new tasks with title, description, due date, and priority.
-
-✅ Update or delete existing tasks.
-
-✅ Mark tasks as **Completed** — completed tasks are automatically hidden from the UI.
-
-✅ View only the **6 most recent active (non-completed)** tasks in the UI.
-
-✅ Paginated and sorted task list via REST API.
-
-✅ Backend follows **Spring Boot best practices** with **unit & integration tests**.
-
-✅ Fully containerized using **Docker Compose**.
+- ✅ Create new tasks with title, description, due date, and priority.
+- ✅ Update or delete existing tasks.
+- ✅ Mark tasks as **Completed** — completed tasks are automatically hidden from the UI.
+- ✅ View only the **6 most recent active (non-completed)** tasks in the UI.
+- ✅ Paginated and sorted task list via REST API.
+- ✅ Backend follows **Spring Boot best practices** with **unit & integration tests**.
+- ✅ Fully containerized using **Docker Compose**.
 
 ---
 
@@ -67,13 +61,20 @@ CREATE TABLE IF NOT EXISTS tasks (
 
 ## 🐳 Running with Docker
 
-### 1️⃣ Copy Environment Example
+### 1️⃣ Clone the Repository
+
+```bash
+git clone https://github.com/InsafNilam/tick-mate.git
+cd tick-mate
+```
+
+### 2️⃣ Copy Environment Example
 
 ```bash
 cp .env.example .env
 ```
 
-### 2️⃣ Start Services
+### 3️⃣ Start Services
 
 ```bash
 docker compose up -d --build
@@ -81,16 +82,16 @@ docker compose up -d --build
 
 This will start:
 
-- `db` → PostgreSQL 18 (Alpine)
-- `backend` → Spring Boot app on port **8080**
-- `frontend` → React app on port **5173**
+* **db**       → PostgreSQL 18 (Alpine)
+* **backend**  → Spring Boot app on port **8080**
+* **frontend** → React app on port **5173**
 
-### 3️⃣ Access the App
+### 4️⃣ Access the App
 
-- Frontend → [http://localhost:5173](http://localhost:5173)
-- Backend API → [http://localhost:8080/api/tasks](http://localhost:8080/api/tasks)
+* 🖥️ Frontend → [http://localhost:5173](http://localhost:5173)
+* ⚙️ Backend API → [http://localhost:8080/api/tasks](http://localhost:8080/api/tasks)
 
-### 4️⃣ Stop Containers
+### 5️⃣ Stop Containers
 
 ```bash
 docker compose down
